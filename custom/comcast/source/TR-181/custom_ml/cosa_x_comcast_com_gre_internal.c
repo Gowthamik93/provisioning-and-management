@@ -80,7 +80,7 @@ CosaGreInitialize
     if (CosaDml_GreInit() != ANSC_STATUS_SUCCESS)
         return ANSC_STATUS_FAILURE;
 
-    memset(gre->GreIf, 0, sizeof(COSA_DML_GRE_IF) * MAX_GRE_IF);
+    /* CID 163448 fix - remove useless call since structure is already initialized by AnscAllocateMemory */
 
     ifCnt = CosaDml_GreIfGetNumberOfEntries();
     nextIns = 1;
